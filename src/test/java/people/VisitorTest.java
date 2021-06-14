@@ -4,6 +4,7 @@ import attractions.Attraction;
 import attractions.Park;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.experimental.theories.Theories;
 
 import static org.junit.Assert.*;
 
@@ -14,8 +15,8 @@ public class VisitorTest {
 
     @Before
     public void before(){
-        visitor = new Visitor(14, 1.2, 40.0);
-        attraction = new Park("Vikings Rest", 3);
+        visitor = new Visitor(14, 125, 40.0);
+        attraction = new Park("Summers Rest", 3);
     }
 
     @Test
