@@ -6,6 +6,8 @@ import people.Visitor;
 import stalls.IceCreamStall;
 import stalls.ParkingSpot;
 
+import java.util.HashMap;
+
 import static org.junit.Assert.assertEquals;
 
 public class ThemeParkTest {
@@ -20,7 +22,7 @@ public class ThemeParkTest {
     public void setUp() throws Exception {
         themePark = new ThemePark();
         park = new Park("Summers Rest", 3);
-        iceCreamStall = new IceCreamStall("Mama's IceCream", "Mama", ParkingSpot.A1, 3);
+        iceCreamStall = new IceCreamStall("Mama's IceCream", "Mama", ParkingSpot.A1, 4);
         rollerCoaster = new RollerCoaster("Edge", 5);
         visitor = new Visitor(14, 125, 40.0);
 
@@ -53,4 +55,11 @@ public class ThemeParkTest {
         assertEquals(1, rollerCoaster.getVisitCount());
     }
 
+    @Test
+    public void getAllReviewed() {
+        themePark.addAttraction(park);
+        themePark.addStall(iceCreamStall);
+        HashMap<String, Integer> reviews = new HashMap<>(themePark.allReviews());
+        assertEquals(reviews, themePark.allReviews());
+    }
 }

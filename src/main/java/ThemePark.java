@@ -4,6 +4,7 @@ import people.Visitor;
 import stalls.Stall;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class ThemePark  {
 
@@ -30,7 +31,6 @@ public class ThemePark  {
         this.stalls.add(stall);
     }
 
-
     public ArrayList<IReviewed> getAllReviewed() {
         ArrayList<IReviewed> reviewed = new ArrayList<>();
         reviewed.addAll(attractions);
@@ -41,6 +41,14 @@ public class ThemePark  {
     public void visit (Visitor visitor, Attraction attraction) {
         attraction.incrementVisitCount();
         visitor.addVisitedAttraction(attraction);
+    }
+
+    public HashMap<String, Integer> allReviews() {
+        HashMap<String, Integer> reviews = new HashMap<>();
+        for (IReviewed reviewed : getAllReviewed()) {
+            reviews.put(reviewed.getName(), reviewed.getRating());
+        }
+        return reviews;
     }
 
 }
