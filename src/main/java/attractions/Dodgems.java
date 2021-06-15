@@ -21,7 +21,7 @@ public class Dodgems extends Attraction implements ITicketed {
 //        }
 //        return defaultPrice();
 
-        return visitor.getAge() <= 12 ? defaultPrice() / 2 : defaultPrice();
+        return visitor.getAge() < 12 ? defaultPrice() / 2 : defaultPrice();
     }
 
 }

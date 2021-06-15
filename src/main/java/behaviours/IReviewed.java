@@ -2,8 +2,8 @@ package behaviours;
 
 public interface IReviewed {
 
-    public int getRating();
+    int getRating();
 
-    public String getName();
+    String getName();
 
 }
